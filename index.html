@@ -1,0 +1,50 @@
+<!doctype html>
+<html id="root">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>PHP MUSIC</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://SabbaKilam.github.io/modules/L.js"></script>
+    <!--<script src="L.js"></script>-->
+    <script src="jsmediatags.js"></script>
+    <script src="MVC.js"></script>
+    <script src="methodsREACT.js"></script>
+    <script src="methodsUPDATE.js"></script>
+    <script src="methodsHELPER.js"></script>    
+  </head>
+  
+  <body id="body">
+     
+      <div id="background"></div>
+      
+      <div id="controlsHolder">
+        <div id="progressBar"></div>
+        <br>
+        <input type="file" id="fileElement" accept="audio/mp3" multiple>
+        <select id="documentSelector">
+          <option>(no songs)</option>
+        </select>
+        <audio id="player" controls></audio>
+      </div>
+
+    <footer ><span id="info"></span></footer>
+    <!--====| NO HTML BELOW THIS LINE |===-->
+    <script>
+      /*global c*/
+      window.addEventListener(`DOMContentLoaded`, c.initialize, true)
+    </script>
+  </body>
+  
+</html>
+
+
+
+
+
+
+
+
+
+

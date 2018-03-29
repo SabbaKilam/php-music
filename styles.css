@@ -1,0 +1,138 @@
+*  {
+  box-sizing: border-box;
+}
+html{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 30px; 
+  user-select: none;  
+  overflow: hidden;  
+}
+
+body{
+  padding: 0;
+  margin: 0;  
+  height: 100%;
+  width: 100%;
+  text-shadow: 0 1px 0 white;
+  transition: all 0.25s ease; 
+  overflow: hidden;
+}
+
+#background{
+  position: fixed;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;  
+  right: 0;
+  background-image: url(images/twostalks.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;    
+}
+
+#controlsHolder{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+#fileElement{
+  display: inline-block;
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.25rem;
+  border: 1px solid gray;
+  padding: 0.125rem;
+  color: gray;
+  text-shadow: 0 1px 0 white;
+}
+select{
+  display: inline-block;
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  border-radius: 0.25rem;
+  border: 1px solid gray;
+  padding: 0.125rem;
+  color: black;
+  text-shadow: 0 1px 0 white;
+}
+
+audio{
+  display: inline-block;
+  position: absolute;
+  bottom: 0.45rem;;
+  left: 50%;
+  transform: translate(-50%, -40%);  
+  color: gray;
+  text-shadow: 0 1px 0 white;
+  width: 100%;
+  visibility: hidden;
+}
+
+.released{
+  box-shadow: 2px 2px 4px black;
+  font-size:20px;
+  background: #f8f8f8;  
+  color: #181818;
+  text-shadow: 0 1px 0 white;
+}
+
+.pressed{
+  box-shadow: inset 2px 2px 4px black;
+  font-size:19.9px;
+  background: #f2f2f2;  
+  color: black;
+  text-shadow: 0 2px 0 white;  
+}
+
+footer{
+  position: fixed;
+  width: 100%;
+  height: 0.85rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: lightgray;
+  overflow: hidden;
+  text-align: center;
+}
+
+#info{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.5rem; 
+  width: 100%;
+  font-family: sans-serif;
+}
+
+#progressBar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: red;
+  border-bottom: 1px solid gray;
+  border-radius: 1.5px;
+}
+
+
+
+
+
+
