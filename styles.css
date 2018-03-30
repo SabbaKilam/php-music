@@ -33,53 +33,55 @@ body{
   background-repeat: no-repeat;
   background-position: center;    
 }
+#pictureHolder{
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
 
 #controlsHolder{
-  position: fixed;
+  background-color: transparent; 
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+#controlsAssembly{
+  position: fixed;  
+  /*
   width: 100%;
-  height: 100%;
+  height: 75%;
+  padding: 0.25rem;
+  top: 40%;
+  left: 50%;
+  */
+
+  width: 100%;
+  height: 50%;
+  padding: 0.25rem;
   top: 50%;
   left: 50%;
+  
   transform: translate(-50%, -50%);
   text-align: center;
-}
-
-
-#fileElement{
-  display: inline-block;
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 0.25rem;
   border: 1px solid gray;
-  padding: 0.125rem;
-  color: gray;
-  text-shadow: 0 1px 0 white;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  background-color: rgba(238, 238, 238, 0.4);  
 }
-select{
+#select{
   display: inline-block;
-  position: absolute;
-  bottom: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);  
-  border-radius: 0.25rem;
-  border: 1px solid gray;
-  padding: 0.125rem;
-  color: black;
-  text-shadow: 0 1px 0 white;
+  width: 55vw;
 }
 
 audio{
   display: inline-block;
   position: absolute;
-  bottom: 0.45rem;;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, -40%);  
   color: gray;
   text-shadow: 0 1px 0 white;
-  width: 100%;
-  visibility: hidden;
+  width: 99.8%;
 }
 
 .released{
@@ -125,14 +127,64 @@ footer{
   top: 0;
   left: 0;
   width: 0;
-  height: 3px;
+  height: 5px;
   background-color: red;
   border-bottom: 1px solid gray;
-  border-radius: 1.5px;
+  border-radius: 2.5px;
+  z-index: 10;
 }
 
+.portraitTop{
+  /* center at top */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 100%;
+  height: 50%;  
+  text-align: center;
+  background: transparent;
+}
 
+.portraitBottom{
+  /* center at bottom */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  background: #eee;
+}
 
+.landscapeLeft{
+  /* center at left */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  background: transparent;  
+}
+
+.landscapeRight{
+  /* center at right */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  background: #eee;    
+}
 
 
 

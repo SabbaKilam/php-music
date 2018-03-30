@@ -9,7 +9,7 @@ c.initialize = (eventObject) => {
   m.musicFilesUrl = `https://php-music-sabbakilam1.c9users.io/uploads/` 
   
   if(window.localStorage.getItem(`model`)){
-   // m = JSON.parse(window.localStorage.getItem(`model`));
+	//m = JSON.parse(window.localStorage.getItem(`model`));
   }
   
   c.getFileList()
@@ -19,6 +19,8 @@ c.initialize = (eventObject) => {
 
   
 	const eventTypes = [
+		'play',
+		'pause',
 		'ended',
 		'mousedown',
 		'touchstart',
@@ -41,10 +43,10 @@ c.initialize = (eventObject) => {
 		window.addEventListener(eventType, c.updateModel, true);
 	}
 	
-  L.noPinchZoom();
+	L.noPinchZoom();
   
 	//Update the view continously if needed
-	L.loopCall(c.updateView, 16.666667, v);
+	//L.loopCall(c.updateView, 16.666667, v);
 };
 //============================//
 
@@ -76,15 +78,14 @@ m.priorStartTime = m.startTime;
 m.resized = true;
 m.clicked = false;
 
+m.width = window.innerWidth
+m.height = window.innerHeight
+
 
 // app states
 m.CLICK_TIME_MIN = 25; //in milliseconds
 m.CLICK_TIME_MAX = 750; //milliseconds
 m.MAX_WIDTH = 411;//pixels
-
-
-
-m.width = window.innerWidth;
 
 m.defaultBackground = 'images/twostalks.gif'
 m.fractionArray = [];
@@ -92,6 +93,8 @@ m.averageUploadFraction = 0;
 m.uploadPath = `../uploads/`;
 m.musicFilesUrl = `https://php-music-sabbakilam1.c9users.io/uploads/`
 m.busyChangingSongs = false
+m.busyResizing = false
+m.playing = false
 //============================//
 
 

@@ -84,7 +84,6 @@ c.showUploadProgress = (loaded, total, index)=>{
 }
 //=============================================//
 c.playChosenSong = () => {
-  //
   const base = m.musicFilesUrl
   const index = v.documentSelector.selectedIndex
   const src = `${base}${v.documentSelector.options[index].innerText}`
@@ -93,6 +92,7 @@ c.playChosenSong = () => {
     v.player.src = src
     v.player.styles(`visibility: visible`)
     v.player.play()
+    m.playing = true
   },25)
   
   v.background
@@ -118,17 +118,34 @@ c.playChosenSong = () => {
       if (image) {
         const base64String = image.data.reduce((string, datum) => string += String.fromCharCode(datum), '');
         const pictureData = "data:" + image.format + ";base64," + window.btoa(base64String);
-        v.background
+        v.pictureHolder
           .styles
             (`background-image: url(${pictureData})`)
             (`background-size: contain`)
+            (`background-repeat: no-repeat`)
+            (`background-position: center`)
+            (`background-size: contain`)
+            (`background-color: black`) 
+        v.controlsHolder
+          .styles
+            (`background-color: black`)            
+        v.controlsAssembly
+          .styles
+            (`background-color: #eee`)
       }
       else{//no image
         console.log("No image found :(")
-        v.background
+        v.pictureHolder
           .styles
-            (`background-image: url(${m.defaultBackground})`)
-            (`background-size: cover`)
+            (`background-image: url()`)
+            (`background-color: transparent`)            
+        v.controlsHolder
+          .styles
+            (`background-color: transparent`)
+        v.controlsAssembly
+          .styles
+            (`background-color: rgba(238, 238, 238, 0.4)`)            
+     
       }       
       //=========================//
     },
@@ -145,11 +162,16 @@ c.clearUploadData = ()=>{
   m.averageUploadFraction = 0;
 }
 //================================================//
-c.hideMusicPlayer = ()=>{
-  v.player.styles(`visibility: hidden`)
-  //clear out the image
-  v.background
-    .styles
-      (`background-image: url(${m.defaultBackground})`)
-      (`background-size: cover`)
+c.respondToEnded = ()=>{
+  m.playing = false
+}
+//========================================//
+c.respondToPause = ()=>{
+  if(m.busyResizing){return}  
+  m.playing = false
+}
+//============================================//
+c.respondToPlay = ()=> {
+  if(m.busyResizing){return}  
+  m.playing = true 
 }

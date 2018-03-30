@@ -3,12 +3,15 @@
   
   <head>
     <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">    
+    <meta name="mobile-web-app-capable" content="yes">
+	  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>PHP MUSIC</title>
     <link href="styles.css" rel="stylesheet">
+    <script src="jsmediatags.js"></script>    
     <script src="https://SabbaKilam.github.io/modules/L.js"></script>
     <!--<script src="L.js"></script>-->
-    <script src="jsmediatags.js"></script>
     <script src="MVC.js"></script>
     <script src="methodsREACT.js"></script>
     <script src="methodsUPDATE.js"></script>
@@ -18,16 +21,23 @@
   <body id="body">
      
       <div id="background"></div>
-      
-      <div id="controlsHolder">
-        <div id="progressBar"></div>
-        <br>
-        <input type="file" id="fileElement" accept="audio/mp3" multiple>
-        <select id="documentSelector">
-          <option>(no songs)</option>
-        </select>
-        <audio id="player" controls></audio>
+      <div id="progressBar"></div>
+      <div id="controlsHolder" class="landscapeRight">
+                
+        <div id="controlsAssembly">
+          <input type="file" id="fileElement" accept="audio/mp3" multiple><br>
+          <button id="btnPlay">↓ Play this Song ↓</button>
+          <br>         
+          <select id="documentSelector">
+            <option>(no songs)</option>
+          </select>
+          <br>
+          <button>↑ Delete this Song ↑</button>
+        </div>
+        <audio id="player" controls></audio>   
       </div>
+      
+      <div id="pictureHolder" class="landscapeLeft"></div>
 
     <footer ><span id="info"></span></footer>
     <!--====| NO HTML BELOW THIS LINE |===-->
