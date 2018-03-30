@@ -20,7 +20,7 @@ c.showResize = ({controlsAssembly, controlsHolder, pictureHolder, player}) => {
         (`top: 40%;`)
     const wasPlaying = m.playing
     m.playing && player.pause()
-    controlsAssembly.appendChild(player)
+    v.player.styles(`bottom: 0`)(`top: auto`)    
     wasPlaying && m.playing === true && player.play()
   }
   else{
@@ -28,11 +28,11 @@ c.showResize = ({controlsAssembly, controlsHolder, pictureHolder, player}) => {
     pictureHolder.attribs(`class=landscapeLeft`)
     controlsAssembly
       .styles
-        (`height: 50%`)
-        (`top: 50%;`)
+        (`height: 60%`)
+        (`top: 20%;`)
     const wasPlaying = m.playing
     m.playing && player.pause()
-    controlsAssembly.appendChild(player)
+    v.player.styles(`top: 8%`)(`bottom: auto`)
     wasPlaying && m.playing === true && player.play() 
   }
   setTimeout(()=>{

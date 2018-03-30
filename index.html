@@ -22,22 +22,26 @@
      
       <div id="background"></div>
       <div id="progressBar"></div>
-      <div id="controlsHolder" class="landscapeRight">
+      <div id="controlsHolder" class="portraitTop">
                 
         <div id="controlsAssembly">
-          <input type="file" id="fileElement" accept="audio/mp3" multiple><br>
-          <button id="btnPlay">↓ Play this Song ↓</button>
-          <br>         
-          <select id="documentSelector">
-            <option>(no songs)</option>
-          </select>
-          <br>
-          <button>↑ Delete this Song ↑</button>
+          
+          <div id="controls">
+            <input type="file" id="fileElement" accept="audio/mp3" multiple><br>
+            <button id="btnPlay">↓ Play this Song ↓</button>
+            <br>         
+            <select id="documentSelector">
+              <option>(no songs)</option>
+            </select>
+            <br>
+            <button id="btnDelete">↑ Delete this Song ↑</button>            
+          </div>
+          
         </div>
         <audio id="player" controls></audio>   
       </div>
       
-      <div id="pictureHolder" class="landscapeLeft"></div>
+      <div id="pictureHolder" class="portraitBottom"></div>
 
     <footer ><span id="info"></span></footer>
     <!--====| NO HTML BELOW THIS LINE |===-->
