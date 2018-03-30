@@ -175,3 +175,30 @@ c.respondToPlay = ()=> {
   if(m.busyResizing){return}  
   m.playing = true 
 }
+//============================================//
+c.deleteFile = ()=>{
+  const index = v.documentSelector.selectedIndex
+  const filename = v.documentSelector.options[index].innerText
+  
+  const msg = `OK to DELETE ${filename}?\n( Otherwise, CANCEL )`
+  const okToDelete = confirm(msg)
+  if(okToDelete){
+    const killer = new XMLHttpRequest()
+    const envelope = new FormData()
+    envelope.append(`filename`, filename)
+    killer.open(`POST`, `php/deleteFile.php`)
+    killer.send(envelope)
+    //--------------------------//
+    killer.onload = ()=>{
+      if(killer.status !== 200){
+        console.log("Trouble deleting the file.")      
+      }
+      else{
+        c.getFileList()    
+      }
+    }
+    killer.onerror = ()=>{
+      console.log("Trouble Connecting to server.")
+    }     
+  }
+}

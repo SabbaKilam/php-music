@@ -13,8 +13,8 @@ c.updateModel = (eventObject) => {
     respondToEnded:   [m.source === v.player, m.type === 'ended'],
     respondToPause:   [m.source === v.player, m.type === 'pause'],
     respondToPlay:    [m.source === v.player, m.type === 'play'],
-    
     setPlay:          [m.source === v.btnPlay, m.clicked], 
+    deleteFile:       [m.source === v.btnDelete, m.clicked],     
     //setXYZ:          [], 
     //setXYZ:          [], 
     //setXYZ:          [], 
