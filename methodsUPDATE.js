@@ -9,11 +9,11 @@ c.updateModel = (eventObject) => {
   const functionQualifiers = {
     setResize:        [m.resized],
     uploadFiles:      [m.source === v.fileElement, m.type === 'change'],
+    setPlay:          [m.source === v.btnPlay, m.clicked],     
     playChosenSong:   [m.source === v.documentSelector, m.type === 'change'],
     respondToEnded:   [m.source === v.player, m.type === 'ended'],
     respondToPause:   [m.source === v.player, m.type === 'pause'],
     respondToPlay:    [m.source === v.player, m.type === 'play'],
-    setPlay:          [m.source === v.btnPlay, m.clicked], 
     deleteFile:       [m.source === v.btnDelete, m.clicked],     
     //setXYZ:          [], 
     //setXYZ:          [], 

@@ -16,7 +16,6 @@ c.initialize = (eventObject) => {
   window.id = 'window';
 	window.document.id = `document`;
 	L.attachAllElementsById(v);
-
   
 	const eventTypes = [
 		'play',
@@ -47,6 +46,8 @@ c.initialize = (eventObject) => {
   
 	//Update the view continously if needed
 	//L.loopCall(c.updateView, 16.666667, v);
+	c.setResize(m)
+	c.showResize(v)
 };
 //============================//
 
